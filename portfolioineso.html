@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Ines Ozturk</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    header img {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    .section {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .project {
+      background: white;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .project h3 {
+      margin-top: 0;
+    }
+
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      display: block;
+      margin: 5% auto;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      border: 4px solid white;
+    }
+
+    @media (max-width: 600px) {
+      header img {
+        width: 80px;
+        height: 80px;
+        top: 15px;
+        left: 15px;
+      }
+
+      .modal-content {
+        max-width: 95%;
+        max-height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  
+  <img src="IMG_6709.jpg" alt="Photo de Ines Ozturk" id="profile-img">
+
+  <h1>Ines Ozturk</h1>
+  <p>Étudiante en Bachelor 1 à l’IPSSI Lyon | Passionnée de Web</p>
+</header>
+
+<section class="section">
+  <h2>À propos de moi</h2>
+  <p>Bonjour ! Je suis Inès, actuellement en première année de Bachelor à l’IPSSI à Lyon. J’aime résoudre des problèmes ainsi que de créer des projets avec le code, en particulier en Python. Je suis à la recherche d’un stage ou d’un emploi pour développer mes compétences dans un environnement professionnel.</p>
+</section>
+
+<section class="section">
+  <h2>Mes projets</h2>
+
+  <div class="project">
+    <h3>Site Fan des Sims4</h3>
+    <p>Site qui présente avec les infos du site réel des Sims4, une explication du jeu en globalité ainsi que des photos pour donner envie. Également les liens des réseaux sociaux et du site officiel des Sims4.</p>
+    <a href="https://github.com/inesozturk/calculatrice-python" target="_blank">Voir sur GitHub</a>
+  </div>
+
+  <div class="project">
+    <h3>Pierre;Papier;Ciseaux</h3>
+    <p>Script Python qui crée un mot de passe aléatoire avec lettres, chiffres et symboles.</p>
+    <a href="https://github.com/inesozturk/generateur-mdp" target="_blank">Voir sur GitHub</a>
+  </div>
+
+  <div class="project">
+    <h3>Portfolio en HTML</h3>
+    <p>Création de mon propre portfolio en HTML, avec du style CSS personnalisé et responsive. Ce site présente mes projets, mes contacts et une photo cliquable !</p>
+    <a href="https://github.com/inesozturk/portfolio-html" target="_blank">Voir sur GitHub</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Contact</h2>
+  <p><strong>Email :</strong> i.ozturk@ecole-ipssi.net</p>
+  <p><strong>GitHub :</strong> <a href="https://github.com/ifztrk" target="_blank">github.com/inesozturk</a></p>
+  <p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/ines-ozturk-454173253/" target="_blank">linkedin.com/in/inesozturk</a></p>
+</section>
+
+<footer>
+  &copy; 2025 - Ines Ozturk | Portfolio personnel
+</footer>
+
+
+<div id="imgModal" class="modal">
+  <img class="modal-content" id="imgFull">
+</div>
+
+
+<script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("imgFull");
+  const profileImg = document.getElementById("profile-img");
+
+  profileImg.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  };
+
+  modal.onclick = function() {
+    modal.style.display = "none";
+  };
+</script>
+
+</body>
+</html>
